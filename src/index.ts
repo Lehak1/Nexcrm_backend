@@ -1,19 +1,42 @@
-import express,{Request,Response} from "express"
-import cors from "cors"
+import express, { Request, Response } from "express";
+import cors from "cors";
 import dotenv from "dotenv";
+import mongoose from "mongoose";
 dotenv.config();
 
-import mongoose from "mongoose";
+// Importing Routes
+import customerRouter from "./routes/customerroute";        // Customer Routes
+import segmentRouter from "./routes/segroute";          // Segment Routes
+import orderRouter from "./routes/orderroute";              // Order Routes
+import userRouter from "./routes/userroute";                // User Routes
+import campaignRouter from "./routes/campaignroutes";        // Campaign Routes
+import communicationRouter from "./routes/communicationlogroutes"; // Communication Routes
 
-mongoose.connect(process.env.MONGODB_CONNECTION_STRING as string).then(() => console.log("connected to database"))
-const app=express();
-app.use(express.json())
-app.use(cors())
+// Connecting to the Database
+mongoose.connect(process.env.MONGODB_CONNECTION_STRING as string).then(() => {
+  console.log("Connected to database");
+});
 
-app.get("/test",async (req:Request,res:Response) => {
+const app = express();
 
-})
+// Middlewares
+app.use(express.json());
+app.use(cors());
 
-app.listen(3000,()=> {
-    console.log("Serve started")
-})
+// Routes
+app.use("/customers", customerRouter);         // Customer routes
+app.use("/segments", segmentRouter);           // Segment routes
+app.use("/orders", orderRouter);               // Order routes
+app.use("/users", userRouter);                 // User routes
+app.use("/campaigns", campaignRouter);         // Campaign routes
+app.use("/communications", communicationRouter); // Communication routes
+
+// Test Route
+app.get("/test", async (req: Request, res: Response) => {
+  res.status(200).json({ message: "Test route working!" });
+});
+
+// Start Server
+app.listen(3000, () => {
+  console.log("Server started on port 3000");
+});
