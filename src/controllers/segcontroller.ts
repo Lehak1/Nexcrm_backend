@@ -23,16 +23,3 @@ export const getSegments = async (req: Request, res: Response) => {
   }
 };
 
-// Get a segment by ID
-export const getSegmentById = async (req: Request, res: Response) => {
-  try {
-    const { id } = req.params;
-    const segment = await Segment.findById(id);
-    if (!segment) {
-      return res.status(404).json({ message: "Segment not found" });
-    }
-    res.status(200).json({ segment });
-  } catch (error) {
-    res.status(500).json({ message: "Error fetching segment", error });
-  }
-};

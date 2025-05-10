@@ -23,13 +23,14 @@ export const getUsers = async (req: Request, res: Response) => {
   }
 };
 
-// Get user by ID
-export const getUserById = async (req: Request, res: Response) => {
+
+export const getUserById = async (req: Request, res: Response): Promise<void> => {
   try {
     const { id } = req.params;
     const user = await User.findById(id);
     if (!user) {
-      return res.status(404).json({ message: "User not found" });
+      res.status(404).json({ message: "User not found" });
+      return;
     }
     res.status(200).json({ user });
   } catch (error) {
