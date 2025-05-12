@@ -1,11 +1,15 @@
-import express from "express";
-import { createOrder, getOrders } from "../controllers/orderController";
-import { validateOrderRequest } from "../middleware/validation";
-import { jwtCheck, jwtParse } from "../middleware/Auth"
+import express from 'express';
+import { jwtCheck, jwtParse, isAuthenticated } from '../middleware/Auth';
+import {
+  createOrder,
+  getOrdersByCustomer,
+  updateOrderStatus,
+} from '../controllers/orderController';
 
 const router = express.Router();
 
-router.post("/", jwtCheck, jwtParse, validateOrderRequest, createOrder);
-router.get("/", jwtCheck, jwtParse, getOrders);
+router.post('/', jwtCheck, jwtParse, isAuthenticated, createOrder);
+router.get('/customer/:customerId', jwtCheck, jwtParse, isAuthenticated, getOrdersByCustomer);
+router.patch('/:orderId/status', jwtCheck, jwtParse, isAuthenticated, updateOrderStatus);
 
 export default router;

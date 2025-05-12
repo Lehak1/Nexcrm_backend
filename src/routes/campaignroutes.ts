@@ -14,11 +14,13 @@ const router = express.Router();
 
 router.post("/api/campaign", jwtCheck, jwtParse, isAuthenticated, createCampaign);
 
-router.post("/campaign/preview", isAuthenticated, previewAudience);
-router.get("/campaign/history", isAuthenticated, getCampaignHistory);
+router.post("/campaign/preview", jwtCheck, jwtParse, isAuthenticated, previewAudience);
+
+router.get("/campaign/history", jwtCheck, jwtParse, isAuthenticated, getCampaignHistory);
+
 
 // These two are called by the internal flow/vendor
-router.post("/campaign/vendor", simulateVendorAPI);
-router.post("/campaign/receipt", handleDeliveryReceipt);
+router.post("/vendor", simulateVendorAPI);
+router.post("/receipt", handleDeliveryReceipt);
 
 export default router;
