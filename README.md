@@ -37,14 +37,16 @@ OPENAI_API_KEY=<your-openai-api-key>
     ```bash 
     npm run dev
 
-4. **Database Setup** 
-  ```bash 
-     npm run migrate
+4. **Database Setup**  
+   ```bash
+   npm run migrate
 
 
 
 
 ---
+
+
 # Architecture Diagram
 The system follows a Model-View-Controller (MVC) architecture where:
 
