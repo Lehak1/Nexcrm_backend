@@ -20,9 +20,10 @@ This repository contains the backend for the Campaign Management System built wi
    git clone <repository-url>
 
 2. **Install Dependencies** 
-   npm install
+    ```bash 
+    npm install
 
-3.  Set Up Environment Variables
+2. **Set Up Environment Variables** 
 
 MONGO_URI=<your-mongo-db-uri>
 AUTH0_CLIENT_ID=<your-auth0-client-id>
@@ -30,7 +31,7 @@ AUTH0_CLIENT_SECRET=<your-auth0-client-secret>
 OPENAI_API_KEY=<your-openai-api-key>
 
 4. Start the Development Server
-
+  ```bash 
 npm run dev
 
 5. Database Setup
@@ -53,13 +54,14 @@ Here is a basic architecture diagram of how the system works:
 
 
 +-------------------+        +-------------------+        +-----------------+
-|   Frontend (React)| <----> | Backend (Express) | <----> |  (GEMINI)       |
+|   Frontend (React)| <----> | Backend (Express) | <----> |  GEMINI API     |
 +-------------------+        +-------------------+        +-----------------+
                                |                       |
                                v                       v
-                       +-------------------+  +--------------------+
-                       | MongoDB          |  | Auth0 (Authentication)|
-                       +-------------------+  +--------------------+
+                       +-------------------+    +--------------------------+
+                       |     MongoDB       |    | Auth0 (Authentication)   |
+                       +-------------------+    +--------------------------+
+
 
 
 
