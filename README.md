@@ -1,6 +1,6 @@
 # Backend Setup - Campaign Management System
 
-This repository contains the backend for the Campaign Management System built with **Node.js**, **Express.js**, **MongoDB**, and **Prisma**. It also integrates **Auth0** for authentication and **OpenAI GPT-3/4** for generating personalized campaign messages.
+This repository contains the backend for the Campaign Management System built with **Node.js**, **Express.js**, **MongoDB**, and **Prisma**. It also integrates **Auth0** for authentication and **GEMINI API** for generating personalized campaign messages.
 
 ## Table of Contents
 
@@ -11,33 +11,34 @@ This repository contains the backend for the Campaign Management System built wi
 
 ---
 
-## Local Setup Instructions
+# Local Setup Instructions
 
-### 1. Clone the Repository
-Clone the backend repository to your local machine:
-```bash
-git clone <repository-url>
+1. **Clone the Repository**  
+   Clone the backend repository to your local machine:
 
+   ```bash
+   git clone <repository-url>
 
-### 2. Install Dependencies
-npm install
+2. **Install Dependencies** 
+   npm install
 
-### 3.  Set Up Environment Variables
+3.  Set Up Environment Variables
 
 MONGO_URI=<your-mongo-db-uri>
 AUTH0_CLIENT_ID=<your-auth0-client-id>
 AUTH0_CLIENT_SECRET=<your-auth0-client-secret>
 OPENAI_API_KEY=<your-openai-api-key>
 
-### 4. Start the Development Server
+4. Start the Development Server
 
 npm run dev
 
-### 5. Database Setup
+5. Database Setup
 
 npm run migrate
 
 
+---
 
 ## Architecture Diagram
 The system follows a Model-View-Controller (MVC) architecture where:
@@ -62,13 +63,14 @@ Here is a basic architecture diagram of how the system works:
 
 
 
-AI Tools and Other Tech Used
+##  AI Tools and Other Tech Used
+
 AI Integration:
 GEMINI API: The backend communicates with Gemini models to generate personalized campaign messages. This integration provides the AI-powered content for campaigns based on user input.
 
 
+##  Other Technologies:
 
-Other Technologies:
 Node.js: JavaScript runtime environment used for building the server-side logic.
 
 Express.js: Web framework used to build the RESTful API for campaign management.
