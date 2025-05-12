@@ -21,9 +21,7 @@ mongoose.connect(process.env.MONGODB_CONNECTION_STRING as string).then(() => {
 const app = express();
 
 // Middlewares
-app.use(cors({
-  origin: "http://localhost:5173", // your frontend origin
-}));
+app.use(cors());
 app.use(express.json());
 
 
