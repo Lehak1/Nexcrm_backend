@@ -37,16 +37,14 @@ OPENAI_API_KEY=<your-openai-api-key>
     ```bash 
     npm run dev
 
-4. **Database Setup**  
-   ```bash
-   npm run migrate
+4. **Database Setup** 
+  ```bash 
+     npm run migrate
 
 
 
 
 ---
-
-
 # Architecture Diagram
 The system follows a Model-View-Controller (MVC) architecture where:
 
@@ -60,14 +58,13 @@ Here is a basic architecture diagram of how the system works:
 
 
 +-------------------+        +-------------------+        +-----------------+
-|   Frontend (React)| <----> | Backend (Express) | <----> |  Gemini API     |
+|   Frontend (React)| <----> | Backend (Express) | <----> |  GEMINI API     |
 +-------------------+        +-------------------+        +-----------------+
-                                 |                          |
-                                 v                          v
-                        +-------------------+     +------------------------+
-                        |     MongoDB       |     |  Auth0 (Auth Provider) |
-                        +-------------------+     +------------------------+
-
+                               |                       |
+                               v                       v
+                       +-------------------+    +--------------------------+
+                       |     MongoDB       |    | Auth0 (Authentication)   |
+                       +-------------------+    +--------------------------+
 
 
 
