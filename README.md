@@ -1,6 +1,6 @@
 # Backend Setup - Campaign Management System
 
-This repository contains the backend for the Campaign Management System built with **Node.js**, **Express.js**, **MongoDB**, and **Prisma**. It also integrates **Auth0** for authentication and **GEMINI API** for generating personalized campaign messages.
+This repository contains the backend for the Campaign Management System built with **Node.js**, **Express.js**, **MongoDB**. It also integrates **Auth0** for authentication and **GEMINI API** for generating personalized campaign messages.
 
 ## Table of Contents
 
@@ -26,17 +26,22 @@ This repository contains the backend for the Campaign Management System built wi
 2. **Set Up Environment Variables** 
 
 MONGO_URI=<your-mongo-db-uri>
+
 AUTH0_CLIENT_ID=<your-auth0-client-id>
+
 AUTH0_CLIENT_SECRET=<your-auth0-client-secret>
+
 OPENAI_API_KEY=<your-openai-api-key>
 
-4. Start the Development Server
-  ```bash 
+3. **Start the Development Server** 
+    ```bash 
 npm run dev
 
-5. Database Setup
-
+4. **Database Setup** 
+  ```bash 
 npm run migrate
+
+
 
 
 ---
