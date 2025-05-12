@@ -35,18 +35,17 @@ OPENAI_API_KEY=<your-openai-api-key>
 
 3. **Start the Development Server** 
     ```bash 
-npm run dev
+    npm run dev
 
 4. **Database Setup** 
   ```bash 
-npm run migrate
+     npm run migrate
 
 
 
 
 ---
-
-## Architecture Diagram
+# Architecture Diagram
 The system follows a Model-View-Controller (MVC) architecture where:
 
 Model: Handles the data (MongoDB database and Prisma ORM).
